@@ -1,11 +1,16 @@
-.container-fluid{
+/* .container-fluid{
     display: flex;
     width: 1000px;
     height: auto;
     padding-top: 30px;
+}
+
+.card-box{
+    display: flex;
     background-color: rgb(147, 148, 148);
     box-shadow: rgb(50, 50, 50);
 }
+
 .card{
     margin-right: 1000px;
 }
@@ -20,4 +25,4 @@ p {
     color: #1c698c;
     margin: 10px 0 0 0;
     font-size: 20px;
-}
+} */
