@@ -50,12 +50,18 @@
       <div class="nav-tabs">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a onclick="changeClass()" class="nav-link active" aria-current="page" href="index.html"
+            <a
+              onclick="changeClass(e)"
+              class="nav-link active"
+              aria-current="page"
+              href="index.html"
               >Тендерное управление</a
             >
           </li>
           <li class="nav-item">
-            <a onclick="changeClass()" class="nav-link active" href="rozn.html"
+            <a onclick="changeClass(e)" 
+            class="nav-link active" 
+            href="rozn.html"
               >Управление по работе со стратегическими партнерами</a
             >
           </li>
@@ -287,12 +293,23 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
-    <script>
-      const elements = document.getElementsByTagName("a")
-      console.log(elements[0])
+    <!-- <script>
+      const elements = document.querySelector("a")
+      console.log(elements)
       const changeClass = function (e) {
-        alert("changeClass" + "  " +  elements[0])
+        elements.array.forEach(element => {
+          elements.classList.replace('nav-link active', 'nav-link')
+        });
       }
-    </script>
+    </script> -->
+    <!-- <script>
+      const elemes = document.getElementsByTagName("h5")
+      const changeButton = function () {
+        console.log(elems)
+        for (let i = 0; i < elemes.length; i++) {
+          elemes[i].classList.replace("btn btn-primary", "btn btn-danger")
+        }
+      }
+    </script> -->
   </body>
 </html>
