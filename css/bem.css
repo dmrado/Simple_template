@@ -1,119 +1,150 @@
 /*принятые вводные для всего проекта*/
-*{
+* {
     box-sizing: border-box;
 }
 
 /*обнуление потока*/
-.clearfix::after{
+.clearfix::after {
     clear: both;
-    content:'';
+    content: '';
     display: table;
 }
 
 ::before,
-::after{
+::after {
     box-sizing: inherit;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-body{
-    background-color: #9bf6e4;
+body {
+    background-color: #e6eaec;
 }
+
 /*----------------------------------*/
 /*Button*/
 /*у блоков не должно быть margin-ов*/
-.btn{
+.btn {
     border: none;
-    outline: none;
-    border-radius: 10px;
-    background-color: #2f215e;
+    padding: 13px 20px;
+    min-width: 130px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #1b0760;
     color: #f0f0f0;
     font-size: 18px;
-    padding: 13px 20px;
+    transition: background-color, font-size .3s;
 }
 
-btn:hover{
-
+.btn:hover {
+    background-color: #6b58ab;
+    font-size: 20px;
+    text-shadow: 10px 10px 30px #ffffff;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: .3s;
+    box-shadow: 2px 2px 3px 0px rgb(0, 0, 0);
 }
-btn:active{
 
+.btn:active {
+    background-color: #cac2ec;
+    color: #cac2ec;
 }
-btn:focus{
 
- }
+.btn:focus {
+    background-color: #c7c8ff;
+    color: #000000;
+}
 
 /* Сетка карточек */
-.cards-list{
+.cards-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     /*justify-content: center;*/
-    gap:10px;
+    gap: 10px;
     /*list-style-type: disc;*/
     padding: 0;
     margin: 0;
 }
+
 /* Card */
-.card{
+.card {
     /*position:relative;*/
     max-width: 420px;
     /* max-height: 500px; */
-    border-radius: 15px;
-    background-color: aliceblue;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: #a9ceea;
     box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    z-index: 5;
 }
 
-.card__img{
+.card__img {
     /*position: absolute;*/
     display: inline;
     width: 100%;
     height: 50%;
     object-fit: cover;
-    opacity: 30%;
+    opacity: 90%;
+    z-index: 10;
 }
 
-.card__body{
+.card__body {
     padding: 40px;
     transform: rotate(10deg);
+    opacity: 90%;
+    z-index: 15;
 }
 
-.card__link{
+.card__link {
     color: rgb(15, 2, 112);
     display: inline-block;
     margin-bottom: 15px;
     transition: .5s;
 }
 
-.card__link:hover{
-    color:blueviolet;
+.card__link:hover {
+    color: blueviolet;
     font-size: 20px;
     transition: .5s;
     text-shadow: 1px 0px 3px #12141D;
     cursor: pointer;
 }
 
-.card__price{
+.card__price {
     margin-bottom: 15px;
     font-size: 16px;
     font-weight: bold;
     transform: translate(40%);
 }
 
-.card__description{
+.card__description {
     font-size: 16px;
     margin: 0;
+    padding: 10px;
     /*НЕ РАБОТАЕТ ellipsis*/
     /*text-overflow: ellipsis;*/
     border-radius: 15px;
     box-shadow: 1px 1px 10px rgb(15, 2, 112);
 }
 
-.card__description-resized{
+.card__description-resized {
     color: chartreuse;
     box-shadow: 1px 1px 10px rgb(15, 2, 112);
     /*resize: initial;*/
     transform: translate(100%);
 }
+
+
+/*Rating*/
+.rating {
+    display: flex;
+}
+
+.rating__star:not(:last-child) {
+    margin-right: 6px;
+}
+
