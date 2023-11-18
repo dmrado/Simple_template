@@ -7,7 +7,7 @@
 .clearfix::after {
     clear: both;
     content: '';
-    display: table;
+    /*display: table;*/
 }
 
 ::before,
@@ -21,6 +21,7 @@ a {
 
 body {
     background-color: #F1F1F1;
+    margin-top: 70px;
 }
 
 /*----------------------------------*/
@@ -35,7 +36,7 @@ body {
     background-color: #1b0760;
     color: #f0f0f0;
     font-size: 18px;
-    transition: background-color, font-size .2s;
+    transition: background-color, font-size .3s;
 }
 
 .btn:hover {
@@ -45,19 +46,20 @@ body {
     text-shadow: 10px 10px 30px #ffffff;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    transition: .2s;
+    /*transition: .2s;*/
     box-shadow: 3px 3px 5px 0px rgb(0, 0, 0);
 }
 
-.btn:active {
-    background-color: #dc270c;
-    color: #41fd16;
-}
+/*.btn:active {*/
+/*    background-color: #dc270c;*/
+/*    color: #41fd16;*/
+/*}*/
 
 .btn:focus {
     background-color: #4b329f;
     color: #f0f0f0;
     box-shadow: none;
+    outline: 1px solid #0e0f16;
 }
 
 /*модификатор желтого цвета*/
@@ -65,22 +67,101 @@ body {
     background-color: #919109;
 }
 
+
+/*Header*/
+
+.header {
+    flex-direction: column;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    min-width: 100%;
+    color: #000000;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    box-shadow: 5px 5px 10px #828386;
+    z-index: 20;
+
+}
+
+.nav-bar__logo_go-left {
+    display: flex;
+    justify-content: start;
+}
+
+.header__logo {
+    max-width: 120px;
+    max-height: 66px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    padding-top: 2px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.nav-bar__links_go-right {
+    display: flex;
+    justify-content: end;
+}
+
+.nav-bar__link {
+    padding-top: 25px;
+    font-size: 22px;
+    margin-right: 30px;
+    transition: .1s;
+}
+
+.nav-bar__link:hover {
+    color: #b0b1f6;
+    font-size: 26px;
+    text-shadow: 1px 2px 1px #140254;
+}
+
+.nav-bar__link:focus {
+    font-size: 20px;
+    text-shadow: none;
+    box-shadow: #140254;
+}
+
+.header__banner {
+
+}
+
+
 /* Сетка карточек */
 .cards-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     justify-content: center;
     list-style-type: none;
     padding: 0;
     margin: 0;
     gap: 30px;
 }
-.cards-list__item{
+
+@media (min-width: 576px) {
+    .cards-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .cards-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.cards-list__item {
 }
 
 /* Card */
 .card {
-    /*position:relative;*/
+    position: relative;
     /*width: 372px;*/
     /*min-height: 440px;*/
     /*max-height: 600px;*/
@@ -88,24 +169,23 @@ body {
     border-bottom-left-radius: 25px;
     box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    z-index: 5;
+    z-index: 1;
 }
 
 .card__img {
-    /*position: absolute;*/
     display: block;
     width: 100%;
     height: 217px;
     object-fit: cover;
     opacity: 90%;
-    z-index: 10;
+    z-index: 2;
 }
 
 .card__body {
     padding: 43px 36px;
     transform: rotate(-10deg);
     opacity: 90%;
-    z-index: 15;
+    z-index: 3;
 }
 
 .card__link {
@@ -129,7 +209,6 @@ body {
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: bold;
-    /*transform: translate(40%);*/
 }
 
 .card__price {
@@ -147,7 +226,6 @@ body {
     margin-bottom: 15px;
     font-size: 16px;
     font-weight: normal;
-    transform: scale(1.1);
 }
 
 .card__location {
@@ -162,22 +240,23 @@ body {
     margin: 0;
     padding: 10px;
     /*НЕ РАБОТАЕТ ellipsis .....*/
-    /*text-overflow: ellipsis;*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     border-radius: 15px;
     box-shadow: none;
     cursor: pointer;
+    transition: .3s;
 }
 
 .card__description:hover {
     transform: scale(1.1);
-    transition: .3s;
     box-shadow: 1px 1px 5px rgb(15, 2, 112);
 }
 
 .card__description-resized {
     color: #646363;
     font-size: 18px;
-
     box-shadow: 1px 1px 10px rgb(15, 2, 112);
     /*resize: initial;*/
     /*transform: translate(100%);*/
