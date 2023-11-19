@@ -257,7 +257,11 @@
     <!--    for nav_scrolled    -->
     let elementNav = document.querySelector('.nav')
     window.addEventListener('scroll', () => {
-        elementNav.classList.add("nav_scrolled")
+        if (window.scrollY > 20) {
+            elementNav.classList.add("nav_scrolled")
+        } else {
+            elementNav.classList.remove("nav_scrolled")
+        }
     })
 </script>
 
