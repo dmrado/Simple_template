@@ -97,6 +97,7 @@ body {
     left: 0;
     right: 0;
     background: #f0f0f0;
+    transition: 0.3s;
     /*z-index: 25;*/
     /*opacity: 100%;*/
 }
@@ -256,12 +257,12 @@ body {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
-
-/*@media (min-width: 1400px) {*/
-/*    .cards-list {*/
-/*        grid-template-columns: 1fr 1fr 1fr 1fr;*/
-/*    }*/
-/*}*/
+/*todo сдвиг баннера  с параллаксом не работает, возможно не будет работать и с каруселькой поэтому верхний паралакс убрать*/
+@media(max-width: 576px){
+    .header__img{
+        transform: translate(-20%);
+    }
+}
 
 .cards-list__item {
 }
