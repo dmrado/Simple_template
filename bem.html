@@ -253,8 +253,18 @@
 
 
 </div>
+<script>
+    <!--    for nav_scrolled    -->
+    let elementNav = document.querySelector('.nav')
+    window.addEventListener('scroll', () => {
+        console.log(elementNav)
+        console.log('scrolled!')
+        elementNav.classList.add("nav_scrolled")
+    })
+</script>
 
 <script>
+    <!--    for card    -->
     let elements = document.querySelectorAll('.card__description')
     elements.forEach(element => {
         element.addEventListener("click", () => {

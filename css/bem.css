@@ -97,9 +97,12 @@ body {
     left: 0;
     right: 0;
     background: #f0f0f0;
-    box-shadow: 0px 5px 10px #828386;
     /*z-index: 25;*/
     /*opacity: 100%;*/
+}
+
+.nav_scrolled{
+    box-shadow: 0 5px 10px #828386;
 }
 
 .nav__logo_go-left {
