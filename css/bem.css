@@ -97,8 +97,8 @@ body {
     left: 0;
     right: 0;
     background: #f0f0f0;
-    transition: 0.3s;
-    /*z-index: 25;*/
+    /*transition: 0.1s;*/
+    z-index: 25;
     /*opacity: 100%;*/
 }
 
