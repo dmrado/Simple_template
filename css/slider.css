@@ -55,21 +55,29 @@ body {
     scrollbar-width: 0;
 }
 
-.carousel::-webkit-scrollbar{
+.carousel::-webkit-scrollbar {
     display: none;
 }
+
 .carousel :where(.card, .img) {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.carousel .dragging{
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+
+}
+
+.carousel .dragging {
     scroll-snap-type: none;
     scroll-behavior: auto;
 }
+
 .carousel .dragging .card {
     cursor: grab;
-    user-select:none;
+    user-select: none;
 }
 
 .carousel .card {
