@@ -450,7 +450,7 @@ body {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0 3px 5px rgb(14, 45, 46);
-    margin-top: -3px;
+    margin-top: 30px;
 }
 .tabs__item{
     display: none;
