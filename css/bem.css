@@ -402,8 +402,8 @@ body {
     font-size: 20px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    /* border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px; */
+    /* border-top-left-radius: 15px; */
+    border-bottom-right-radius: 15px;
     background-color: rgb(45, 129, 131);
     border: 0;
     border-right: 1px solid rgb(2, 73, 74);
