@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () =>{
 //  todo написать функции завершения работы менбшек при нажатии esc и нажатии вне менюшки
   document.addEventListener('click', (e) => {
-    if(e.key === escape){
+    if(e.key === esc){
     //  логика удаления class выдвигавшего боковое меню
     //   document.querySelector("").classList.toggle("class")
     }
