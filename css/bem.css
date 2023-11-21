@@ -406,7 +406,7 @@ body {
     padding: 15px 30px;
     font-size: 19px;
     border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
+    /* border-bottom-left-radius: 15px; */
     /* border-top-left-radius: 15px; */
     border-bottom-right-radius: 15px;
     background-color: rgb(45, 129, 131);
@@ -477,7 +477,6 @@ body {
     transform: scale(1);
 }
 
-/*todo при .tabs__btn:focus сделать, что бы тень контентной области исчезала, думаю тогда получится эффект переключения*/
 .tabs__content {
     padding: 50px;
     background-color: #fff;
@@ -487,6 +486,8 @@ body {
     box-shadow: 0 3px 5px rgb(14, 45, 46);
     margin-top: 30px;
 }
+
+/*todo при .tabs__btn:focus сделать, что бы тень контентной области исчезала, думаю тогда получится эффект переключения*/
 
 .tabs__item {
     display: none;
