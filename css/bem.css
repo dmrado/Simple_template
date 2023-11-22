@@ -276,7 +276,28 @@ body {
     border-bottom-right-radius: 25px;
     box-shadow: 5px 5px 5px #8a8a8a;
     overflow: hidden;
-    z-index: 5;
+    /* z-index: 5; */
+}
+
+.card_promo{
+    /* position: relative; */
+    outline: 5px solid #4bff1e;
+    /* z-index: 30; */
+}
+.card_promo::before{
+    content: "Новинка";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: #6bff02;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 30px;
+    color:white;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .card__img {
@@ -284,15 +305,13 @@ body {
     width: 100%;
     height: 217px;
     object-fit: cover;
-    opacity: 90%;
-    z-index: 10;
+    /* z-index: 6; */
 }
 
 .card__body {
     padding: 43px 36px;
-    transform: rotate(-5deg);
-    opacity: 90%;
-    z-index: 15;
+    /* transform: rotate(-5deg); */
+    /* z-index: 15; */
 }
 
 .card__link {
@@ -368,7 +387,6 @@ body {
     /*resize: initial;*/
     /*transform: translate(100%);*/
 }
-
 
 /*Rating*/
 .rating {
