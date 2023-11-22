@@ -25,8 +25,9 @@
     <!--    <link href="lib/animate/animate.min.css" rel="stylesheet"/>-->
     <!--    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"/>-->
     <!--    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>-->
+
+    <link rel="stylesheet" href="css/accordion.min.css" />
     <link rel="stylesheet" href="css/bem.css" />
-    <script src="script.js" defer></script>
 
     <title>DPP | Card</title>
   </head>
@@ -105,9 +106,9 @@
     <div class="container">
       <h1>Наша продукция</h1>
       <ul class="cards-list">
-        <li class="card  card_promo cards-list__item">
+        <li class="card card_promo cards-list__item">
           <img class="card__img" src="img/Binno.jpg" alt="Pic" />
-          <div class="card__body ">
+          <div class="card__body">
             <div class="card__price-rating">
               <!--price-block-->
               <strong class="card__price">10 000 RUR</strong>
@@ -302,6 +303,103 @@
         </div>
       </div>
 
+      <!-- Accordion -->
+      <div class="container">
+        <h1>Accordeon</h1>
+        <ul class="list accordion-container">
+          <li class="list__item ac">
+            <h3 class="list__item-title ac-header class="ac-trigger">
+              Lorem ipsum dolor sit amet!!!
+              <svg
+                class="list__item-icon"
+                with="50"
+                height="50"
+                viewbox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellips />
+                <path />
+              </svg>
+            </h3>
+            <p class="list__item-text ac-panel">
+              <div class="list__item-text_padding"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure qui suscipit in pariatur
+                obcaecati accusamus, dicta molestias quaerat quis similique, nulla sequi? Dolorem
+                optio, consectetur autem dolor debitis minima adipisci.
+              </div>
+            </p>
+          </li>
+
+          <li class="list__item ac">
+            <h3 class="list__item-title ac-header class="ac-trigger">
+              Lorem ipsum 
+              <svg
+                class="list__item-icon"
+                with="50"
+                height="50"
+                viewbox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellips />
+                <path />
+              </svg>
+            </h3>
+            <p class="list__item-text ac-panel">
+              <div class="list__item-text_padding"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure qui suscipit in pariatur
+              obcaecati accusamus, dicta molestias quaerat quis similique, nulla sequi? Dolorem
+              optio, consectetur autem dolor debitis minima adipisci.
+            </div></p>
+          </li>
+
+          <li class="list__item ac">
+            <h3 class="list__item-title ac-header class="ac-trigger">
+              Lorem ipsum dolor sit amet consectetur 
+              <svg
+                class="list__item-icon"
+                with="50"
+                height="50"
+                viewbox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellips />
+                <path />
+              </svg>
+            </h3>
+            <p class="list__item-text ac-panel"> 
+              <div class="list__item-text_padding"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure qui suscipit in pariatur
+              obcaecati accusamus, dicta molestias quaerat quis similique, nulla sequi? Dolorem
+              optio, consectetur autem dolor debitis minima adipisci.
+            </div>
+          </p>
+          </li>
+
+          <li class="list__item ac">
+            <h3 class="list__item-title ac-header class="ac-trigger">
+              Lorem ipsum dolor sit
+              <svg
+                class="list__item-icon"
+                with="50"
+                height="50"
+                viewbox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellips />
+                <path />
+              </svg>
+            </h3>
+            <p class="list__item-text ac-panel">
+              <div class="list__item-text_padding"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure qui suscipit in pariatur
+                obcaecati accusamus, dicta molestias quaerat quis similique, nulla sequi? Dolorem
+                optio, consectetur autem dolor debitis minima adipisci.
+              </div>
+            </p>
+          </li>
+        </ul>
+      </div>
+
       <textarea class="keylogger" placeholder="Введите текст"></textarea>
       <div>
         <p id="text"></p>
@@ -313,10 +411,10 @@
         document.addEventListener("keyup", e => {
           letter = e.key
           arrayE.push(letter)
-        console.log("outText", outText)
-        outText.innerHTML = `Output: ${arrayE}`
-        let a =`Output: ${arrayE}`
-      })
+          console.log("outText", outText)
+          outText.innerHTML = `Output: ${arrayE}`
+          let a = `Output: ${arrayE}`
+        })
       </script>
 
       <!--Footer-->
@@ -392,5 +490,8 @@
         })
       })
     </script>
+    <script src="script.js" defer></script>
+    <script scr="js/accordion.js" ></script>
+    <script scr="index.js" ></script>
   </body>
 </html>

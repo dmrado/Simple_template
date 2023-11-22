@@ -552,6 +552,76 @@ max-width: 1000px;
     z-index: 20;
 }
 
+/* Accordeon */
+
+
+.list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+/* Подгоняем один элемент под предыдущий кроме первого */
+.list__item:not(:first-child){
+    margin-top: -1px;
+}
+.list__item .list__item-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    margin: 0;
+    border: 1 px solid transparent;
+    border-bottom-color: gray;
+    transition: border-color .5s, color .5s;
+}
+
+.list__item:first-child .list__item-title{
+    border-top-color: gray;
+}
+
+.list__item .list__item-title:hover{
+    border-top-color: green;
+    border-bottom-color: green;
+    color:green;
+}
+
+.list__item-icon{
+    margin-left: 20px;
+    display: block;
+    /* предотвращает уменьшение иконки при сжатии */
+    flex-shrink: 0;
+    transition: transform .5s;
+}
+
+.list__item-icon ellips, .list__item-icon path{
+    transition: fill .5s;
+}
+.list__item .list__item-title:hover .list__item-icon ellips{
+    fill: green;
+}
+
+.list__item .list__item-title:hover .list__item-icon path{
+    fill: white;
+}
+
+.list__item .list__item-text{
+    margin: 0;
+    padding: 20px 0;
+}
+
+.list__item-text_padding{
+    padding:5px 30px
+}
+.ac .ac-trigger::after{
+    content: none;
+}
+.ac {
+    margin-top: 0;
+    border: none;
+    background-color:transparent;
+    box-sizing: border-box;
+}
+
 
 /*Footer*/
 .footer {
@@ -565,4 +635,8 @@ max-width: 1000px;
     background-color: #c7c8ff;
     padding-left: 20px;
     z-index: 20;
+}
+
+.is-active .list__item-icon{
+    transform: rotate(45deg)
 }
