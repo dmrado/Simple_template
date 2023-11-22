@@ -189,7 +189,7 @@ body {
     text-align: left;
     color: #fff;
     font-family: "Dosis", "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 75px;
+    font-size: 95px;
     letter-spacing: 2px;
     /*padding: 30vh 0 70vh 0;*/
     transition: 0.3s;
@@ -197,7 +197,8 @@ body {
 }
 
 .header__greeting:hover {
-    text-shadow: 2px 2px 5px #8a8a8a;
+    text-shadow: 2px 2px 5px #f6f2f2;
+    color: #05b09c;
 }
 
 
@@ -232,6 +233,26 @@ body {
     /*z-index: 20;*/
 }
 
+/* TEXT */
+.text {
+    max-width: 1000px;
+    text-align: justify;
+}
+
+.text::first-letter {
+    color: red;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.text::first-line {
+    color: #05b09c;
+}
+
+.text::selection {
+    background-color: #4bff1e;
+    color: #000000
+}
 
 /* Сетка карточек */
 .cards-list {
@@ -247,6 +268,16 @@ body {
 @media (min-width: 576px) {
     .cards-list {
         grid-template-columns: 1fr 1fr;
+    }
+    .header__greeting{
+        font-size: 95px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header__greeting{
+        margin: 40% 18%;
+        font-size: 55px;
     }
 }
 
@@ -383,7 +414,7 @@ body {
     font-size: 16px;
     margin: 0;
     padding: 10px;
-    /*НЕ РАБОТАЕТ ellipsis .....*/
+    /*ellipsis уход первой и единственной строки в многоточье.....*/
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -391,25 +422,6 @@ body {
     box-shadow: none;
     cursor: pointer;
     transition: .3s;
-}
-
-/* TEXT */
-/* .text{
-max-width: 1000px;
-} */
-.text::first-letter {
-    color: red;
-    font-size: 32px;
-    font-weight: 700;
-}
-
-.text::first-line {
-    color: #05b09c;
-}
-
-.text::selection {
-    background-color: #4bff1e;
-    color: #000000
 }
 
 .card__description:hover {
@@ -628,7 +640,8 @@ max-width: 1000px;
 
 .list__item .list__item-text {
     margin: 0;
-    padding: 0 30px;
+    padding: 0 30px 20px 30px;
+    text-align: justify;
 }
 
 .ac .ac-trigger::after {
@@ -645,8 +658,9 @@ max-width: 1000px;
     transform: rotate(45deg);
 }
 
-.list__item-text .list__item-padding{
+.list__item-text .list__item-padding {
     padding: 5px 30px
 }
+
 /* Accordion end */
 
