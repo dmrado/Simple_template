@@ -279,12 +279,13 @@ body {
     /* z-index: 5; */
 }
 
-.card_promo{
+.card_promo {
     /* position: relative; */
     outline: 5px solid #4bff1e;
     /* z-index: 30; */
 }
-.card_promo::before{
+
+.card_promo::before {
     content: "Новинка";
     display: block;
     position: absolute;
@@ -295,12 +296,12 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 10px 30px;
-    color:white;
+    color: white;
     font-size: 18px;
     font-weight: 700;
 }
 
-.card[data_badge]::after{
+.card[data_badge]::after {
     content: attr(data-badge);
     display: block;
     position: absolute;
@@ -310,9 +311,10 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 10px 30px;
-    color:white;
+    color: white;
 }
-.card[data-badge="Скидка"]::after{
+
+.card[data-badge="Скидка"]::after {
     background-color: red;
 }
 
@@ -395,19 +397,19 @@ body {
 /* .text{
 max-width: 1000px;
 } */
-.text::first-letter{
+.text::first-letter {
     color: red;
     font-size: 32px;
     font-weight: 700;
 }
 
-.text::first-line{
-    color:#05b09c;
+.text::first-line {
+    color: #05b09c;
 }
 
-.text::selection{
+.text::selection {
     background-color: #4bff1e;
-    color:#000000
+    color: #000000
 }
 
 .card__description:hover {
@@ -552,76 +554,6 @@ max-width: 1000px;
     z-index: 20;
 }
 
-/* Accordeon */
-
-
-.list{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-/* Подгоняем один элемент под предыдущий кроме первого */
-.list__item:not(:first-child){
-    margin-top: -1px;
-}
-.list__item .list__item-title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 0;
-    margin: 0;
-    border: 1 px solid transparent;
-    border-bottom-color: gray;
-    transition: border-color .5s, color .5s;
-}
-
-.list__item:first-child .list__item-title{
-    border-top-color: gray;
-}
-
-.list__item .list__item-title:hover{
-    border-top-color: green;
-    border-bottom-color: green;
-    color:green;
-}
-
-.list__item-icon{
-    margin-left: 20px;
-    display: block;
-    /* предотвращает уменьшение иконки при сжатии */
-    flex-shrink: 0;
-    transition: transform .5s;
-}
-
-.list__item-icon ellips, .list__item-icon path{
-    transition: fill .5s;
-}
-.list__item .list__item-title:hover .list__item-icon ellips{
-    fill: green;
-}
-
-.list__item .list__item-title:hover .list__item-icon path{
-    fill: white;
-}
-
-.list__item .list__item-text{
-    margin: 0;
-    padding: 20px 0;
-}
-
-.list__item-text_padding{
-    padding:5px 30px
-}
-.ac .ac-trigger::after{
-    content: none;
-}
-.ac {
-    margin-top: 0;
-    border: none;
-    background-color:transparent;
-    box-sizing: border-box;
-}
-
 
 /*Footer*/
 .footer {
@@ -637,6 +569,84 @@ max-width: 1000px;
     z-index: 20;
 }
 
-.is-active .list__item-icon{
+/* Accordion start */
+/* Подгоняем один элемент под предыдущий кроме первого */
+.is-active .list__item-icon {
     transform: rotate(45deg)
 }
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.list__item:not(:first-child) {
+    margin-top: -1px;
+}
+
+.list__item .list__item-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    margin: 0;
+    align-items: center;
+    border: solid 1px transparent;
+    border-bottom-color: gray;
+    transition: border-color .5s, color .5s;
+}
+
+.list__item:first-child .list__item-title {
+    border-top-color: gray;
+}
+
+.list__item .list__item-title:hover {
+    border-top-color: green;
+    border-bottom-color: green;
+    color: green
+}
+
+.list__item-icon {
+    margin-left: 20px;
+    display: block;
+    flex-shrink: 0;
+    transition: transform .5s;
+}
+
+.list__item-icon ellipse,
+.list__item-icon path {
+    transition: fill .5s;
+}
+
+.list__item .list__item-title:hover .list__item-icon ellipse {
+    fill: green
+}
+
+.list__item .list__item-title:hover .list__item-icon path {
+    fill: white
+}
+
+.list__item .list__item-text {
+    margin: 0;
+    padding: 0 30px;
+}
+
+.ac .ac-trigger::after {
+    content: none;
+}
+
+.ac {
+    margin-top: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.is-active .list__item-icon {
+    transform: rotate(45deg);
+}
+
+.list__item-text .list__item-padding{
+    padding: 5px 30px
+}
+/* Accordion end */
+
