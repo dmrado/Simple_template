@@ -391,6 +391,25 @@ body {
     transition: .3s;
 }
 
+/* TEXT */
+/* .text{
+max-width: 1000px;
+} */
+.text::first-letter{
+    color: red;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.text::first-line{
+    color:#05b09c;
+}
+
+.text::selection{
+    background-color: #4bff1e;
+    color:#000000
+}
+
 .card__description:hover {
     transform: scale(1.1);
     box-shadow: 1px 1px 5px #8a8a8a;
