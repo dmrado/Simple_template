@@ -110,7 +110,7 @@ body {
     box-shadow: 0 3px 5px #8a8a8a;
 }
 
-.nav__logo .nav__links{
+.nav__logo .nav__links {
     display: inline-block;
 }
 
@@ -268,23 +268,24 @@ body {
 }
 
 @media (min-width: 576px) {
-    .cards-list{
+    .cards-list {
         grid-template-columns: 1fr 1fr;
     }
-    .header__greeting{
+
+    .header__greeting {
         font-size: 95px;
     }
 }
 
 @media (max-width: 576px) {
-    .header__greeting{
+    .header__greeting {
         margin: 40% 18%;
         font-size: 55px;
     }
 }
 
 @media (min-width: 1024px) {
-    .cards-list{
+    .cards-list {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
@@ -334,6 +335,7 @@ body {
     font-size: 28px;
     font-weight: 700;
 }
+
 /*todo этот скидочный ::after не работает*/
 .card[data_badge]::after {
     content: attr(data-badge);
@@ -570,24 +572,23 @@ body {
 }
 
 
-
-
 /* Text with img block */
-.desc{
+.desc {
     justify-content: center;
     list-style-type: none;
     gap: 30px;
 }
-.desc__block{
+
+.desc__block {
     display: grid;
-    align-items: center;
+    /*align-items: center;*/
     grid-template-columns: 1fr;
     padding: 0;
     margin: 30px;
     gap: 30px;
 }
 
-.desc__img{
+.desc__img {
     /* display: flex; */
     /* align-items: center; */
     width: 372px;
@@ -595,37 +596,44 @@ body {
     border-radius: 15px;
     box-shadow: 5px 5px 5px #8a8a8a;
     overflow: hidden;
+    align-items: center;
+
 }
 
-.desc__text{
+.desc__text {
     max-width: 100%;
     height: 560px;
-    overflow:scroll;
+    overflow: scroll;
     padding-right: 10px;
+    /*align-items: center;*/
+
 }
 
-.desc__block_reverse{
-
+.desc__block_reverse {
+    /*margin-right: 4px;*/
     /* transform: rotate(180deg); */
     transform: scaleX(-1);
 }
 
-.desc__img_reverse{
+.desc__img_reverse {
     transform: scaleX(-1);
 }
-.desc__text_reverse{
+
+.desc__text_reverse {
     transform: scaleX(-1);
 }
 
 @media (min-width: 740px) {
-    .desc__block{
+    .desc__block {
         grid-template-columns: 1fr 2fr;
     }
-    .desc__img{
-    justify-items: center;
-  
+
+    .desc__img {
+        justify-items: center;
+
     }
-    .desc__block_reverse{
+
+    .desc__block_reverse {
 
     }
 }
@@ -729,44 +737,44 @@ body {
 /* Accordion end */
 
 /* Анимация кнопки градиентом */
-/* 
-.uc-features .t-btn { 
-    box-shadow: inset 0 0 0 2px #1f5bff; 
-    position: relative; 
-    transition: color 0.25s; 
-    box-sizing: border-box; 
-} 
- 
-.uc-features .t-btn::before, 
-.uc-features .t-btn::after { 
-    content: ''; 
-    position: absolute; 
-    border: 2px solid transparent; 
-    width: 0; 
-    height: 0; 
-    top: 0; 
-    left: 0; 
-    box-sizing: inherit; 
-} 
- 
-.uc-features .t-btn:hover { 
-    color: #60daaa !important; 
-} 
- 
-.uc-features .t-btn:hover::before, 
-.uc-features .t-btn:hover::after { 
-    width: 100%; 
-    height: 100%; 
-} 
- 
-.uc-features .t-btn:hover::before { 
-    border-top-color: #60daaa; 
-    border-right-color: #60daaa; 
-    transition: width 0.15s ease-out, height 0.15s ease-out 0.15s; 
-} 
- 
-.uc-features .t-btn:hover::after { 
-    border-bottom-color: #60daaa; 
-    border-left-color: #60daaa; 
-    transition: height 0.15s ease-out, width 0.15s ease-out 0.15s; 
+/*
+.uc-features .t-btn {
+    box-shadow: inset 0 0 0 2px #1f5bff;
+    position: relative;
+    transition: color 0.25s;
+    box-sizing: border-box;
+}
+
+.uc-features .t-btn::before,
+.uc-features .t-btn::after {
+    content: '';
+    position: absolute;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    box-sizing: inherit;
+}
+
+.uc-features .t-btn:hover {
+    color: #60daaa !important;
+}
+
+.uc-features .t-btn:hover::before,
+.uc-features .t-btn:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.uc-features .t-btn:hover::before {
+    border-top-color: #60daaa;
+    border-right-color: #60daaa;
+    transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+
+.uc-features .t-btn:hover::after {
+    border-bottom-color: #60daaa;
+    border-left-color: #60daaa;
+    transition: height 0.15s ease-out, width 0.15s ease-out 0.15s;
 }  */
