@@ -718,6 +718,7 @@ body {
 .list__item-text .list__item-padding {
     padding: 5px 30px
 }
+/* Accordion end */
 
 /*Modal*/
 .modal {
@@ -735,6 +736,7 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: opacity .4s, visibility .4s;
+    cursor:pointer;
 }
 
 .modal__box {
@@ -747,6 +749,7 @@ body {
     box-shadow: 0 0 17px -7px rgba(34, 60, 80, .2);
     transform: scale(0);
     transition: transform .8s;
+    cursor:auto;
 }
 
 .modal__close-btn {
@@ -756,7 +759,6 @@ body {
     border: none;
     background-color: transparent;
     padding: 5px;
-    cursor: pointer;
 }
 
 .modal__close-btn {
@@ -783,6 +785,16 @@ body {
     transform: scale(1);
 }
 
+.close-my-modal-btn{
+    display: block;
+    float: right;
+    margin-bottom: 10px;
+}
+.close-my-modal-btn:focus{
+    color:#fff;
+}
+/*Modal end*/
+
 /*Footer*/
 .footer {
     display: flex;
@@ -798,7 +810,7 @@ body {
 }
 
 
-/* Accordion end */
+
 
 /* Анимация кнопки градиентом */
 /*
