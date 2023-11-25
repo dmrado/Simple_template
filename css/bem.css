@@ -753,12 +753,12 @@ body {
 
     .desc__img {
         justify-items: center;
-
     }
 
     .desc__block_reverse {
 
     }
+
 }
 
 /* Accordion start */
@@ -874,6 +874,12 @@ body {
     transform: scale(0);
     transition: transform .8s;
     cursor: auto;
+}
+
+.modal__close-btn:hover{
+    border-top-color: #05b09c;
+    border-bottom-color: #05b09c;
+    color: #05b09c;
 }
 
 .modal__close-btn {
@@ -1051,60 +1057,6 @@ body {
     z-index: 20;
 }
 
-
-/* Бургер меню левое */
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: white;
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        gap: 0;
-        flex-direction: column;
-        background-color: #262626;
-        width: 100%;
-        text-align: center;
-        transition: .3s;
-    }
-
-    .nav-item {
-        margin: 16px 0;
-    }
-
-    .nav-menu:active {
-        left: 0;
-    }
-}
 
 /* Анимация кнопки градиентом */
 /*

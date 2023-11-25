@@ -659,23 +659,26 @@
         <button class="modal__close-btn" id="open-modal-btn">Open modal</button>
         <div class="modal" id="my-modal">
             <div class="modal__box">
-                <svg
-                        id="close-my-modal-btn"
-                        class="close-my-modal-btn"
-                        width="50"
-                        height="50"
-                        viewBox="0 0 50 50"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                >
-                    <ellipse cx="25" cy="25" rx="25" ry="25" fill="#CACACA"/>
-                    <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z"
-                            fill="black"
-                    />
-                </svg>
+                <div class="modal__close-btn">
+                    <svg
+                            id="close-my-modal-btn"
+                            class="close-my-modal-btn"
+                            width="50"
+                            height="50"
+                            viewBox="0 0 50 50"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <ellipse cx="25" cy="25" rx="25" ry="25" fill="#CACACA"/>
+                        <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z"
+                                fill="black"
+                        />
+                    </svg>
+                </div>
+
                 <h2>My modal</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda facilis quia ratione
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi corporis deleniti
@@ -782,15 +785,13 @@
         })
         //    закрыть при клике вне его
         menu.addEventListener('click', e => {
-            console.log(e)
             e._isClickWithInMenu = true
         })
         burger.addEventListener('click', e => {
-            console.log(e)
             e._isClickWithInMenu = true
         })
         document.body.addEventListener('click', e => {
-            if(e._isClickWithInMenu) return
+            if (e._isClickWithInMenu) return
             header.classList.remove('open')
         })
     })
@@ -870,7 +871,6 @@
     })
     //    закрыть по esc
     window.addEventListener('keydown', (e) => {
-        console.log(e)
         if (e.key === "Escape") {
             modal.classList.remove('open')
         }
