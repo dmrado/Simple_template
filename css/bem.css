@@ -5,6 +5,7 @@
 
 /*обнуление потока*/
 .clearfix::after {
+    box-sizing: border-box;
     clear: both;
     content: '';
     /*display: table;*/
@@ -19,12 +20,25 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+}
+
 body {
     background-color: #F1F1F1;
     margin-top: 70px; /*Вынимаем сайт из под навигашки  */
     font-family: "Dosis", "Trebuchet MS", "Helvetica Neue", Helvetica, sans-serif;
     /*font-family: "Dosis", "Helvetica Neue", Helvetica, sans-serif;*/
     /*margin-bottom: 70px;*/ /*для фиксированного футера выcотой 70 px*/
+}
+
+/*body-wrapper нужен для меню навигации справа в режиме телефона*/
+
+.body-wrapper {
+    overflow: hidden;
+    width: 100%;
+    /*position: relative делает этот блок системой координат для меню;*/
+    position: relative;
 }
 
 /*Container*/
@@ -95,7 +109,7 @@ body {
     height: 70px;
     min-width: 100%;
     position: fixed;
-    overflow: hidden;
+    /*overflow: hidden;*/
     top: 0;
     left: 0;
     right: 0;
@@ -110,11 +124,11 @@ body {
     box-shadow: 0 3px 5px #8a8a8a;
 }
 
-.nav__logo .nav__links {
-    display: inline-block;
+.logo {
+    display: block;
 }
 
-.header__logo {
+.logo__img {
     /*для текстового лого*/
     /*font-size: 20px;*/
     /*font-width: 900;*/
@@ -129,22 +143,30 @@ body {
     transition: 0.2s;
 }
 
-.header__logo:hover {
+.logo__img:hover {
     transform: scale(1.1);
     box-shadow: 2px 2px 5px #8a8a8a;
 }
 
-.header__logo:focus {
+.logo__img:focus {
     transform: scale(1);
     box-shadow: none;
     /*outline: 1px solid #000;*/
 }
 
-.nav__links li {
-    display: inline-block;
+.menu__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.nav__links a {
+.menu__item:not(:last-child) {
+    margin-right: 20px
+}
+
+.menu__link {
     display: inline-block;
     font-size: 22px;
     font-weight: 700;
@@ -154,7 +176,7 @@ body {
     transition: .1s ease;
 }
 
-.nav__link:hover {
+.menu__link:hover {
     /*transform: scale(1.1);*/
     color: #05b09c;
     text-shadow: 5px 5px 50px #140254;
@@ -163,10 +185,36 @@ body {
 
 }
 
-.nav__link:focus {
+.menu__link:focus {
     font-size: 20px;
     text-shadow: none;
     box-shadow: #8a8a8a;
+}
+
+@media (max-width: 992px) {
+    .menu {
+        position: absolute;
+        right: -350px;
+        top: 0;
+        width: 350px;
+        background-color: #05b09c;
+        visibility: hidden;
+    }
+
+    .menu__list {
+        display: block;
+    }
+
+    .menu__item {
+        margin-right: 0;
+    }
+
+    .menu__link {
+        color: #fff;
+        font-size: 21px;
+        display: block;
+        padding: 10px 0;
+    }
 }
 
 .header__banner {
@@ -195,7 +243,6 @@ body {
     letter-spacing: 2px;
     /*padding: 30vh 0 70vh 0;*/
     transition: 0.3s;
-    /*z-index: 20;*/
 }
 
 .header__greeting:hover {
@@ -863,6 +910,7 @@ body {
 .contacts .form input[type=submit]:focus {
     box-shadow: 2px 2px 5px #10493d inset;
 }
+
 /*.contacts .form input[type=submit]:active {*/
 /*    box-shadow: 2px 2px 5px gray;*/
 /*    background: rgba(89, 225, 209, 0.99);*/

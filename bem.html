@@ -34,29 +34,36 @@
 </head>
 <body>
 <!--header-block-->
-
-<div class="container">
+<div class="body-wrapper">
+<!--    body-wrapper нужен для меню навигации справа в режиме телефона-->
     <div class="header">
-        <div class="nav">
-            <div class="nav__logo">
-                <img class="header__logo" src="img/Binno.jpg" alt="logo"/>
+        <div class="header__container">
+            <!--header__container -  nav-->
+            <div class="nav">
+                <div class="logo">
+                    <img class="logo__img" src="img/Binno.jpg" alt="logo"/>
+                </div>
+                <!--            nav можно поменять на div -->
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a class="menu__link" href="index.html">Тендер</a></li>
+                        <li class="menu__item"><a class="menu__link" href="rozn.html">Розница</a></li>
+                        <li class="menu__item"><a class="menu__link" href="bem.html">БЭМ</a></li>
+                        <li class="menu__item"><a class="menu__link" href="mod.html">Модификаторы</a></li>
+                        <li class="menu__item"><a class="menu__link" href="slider.html">Слайдер</a></li>
+                    </ul>
+                </nav>
+
             </div>
 
-            <ul class="nav__links">
-                <li><a class="nav__link" href="index.html">Тендер</a></li>
-                <li><a class="nav__link" href="rozn.html">Розница</a></li>
-                <li><a class="nav__link" href="bem.html">БЭМ</a></li>
-                <li><a class="nav__link" href="mod.html">Модификаторы</a></li>
-                <li><a class="nav__link" href="slider.html">Слайдер</a></li>
-            </ul>
-        </div>
-
-        <div class="header__banner">
-            <img class="header__img" src="" alt=""/>
-            <h1 class="header__greeting">Hi bro !</h1>
+            <div class="header__banner">
+                <img class="header__img" src="" alt=""/>
+                <h1 class="header__greeting">Hi bro !</h1>
+            </div>
         </div>
     </div>
 </div>
+
 
 <div class="container">
     <div class="about__list">
@@ -677,7 +684,7 @@
         </div>
     </div>
 
-<!--Контаты-->
+    <!--Контаты-->
     <section class="contacts">
         <div class="form">
             <h2 class="heading">Напишите нам</h2>
@@ -739,8 +746,9 @@
     </div>
 </div>
 
+
+<!--for nav_scrolled-->
 <script>
-    //   <!--    for nav_scrolled    -->
     let elementNav = document.querySelector(".nav")
     window.addEventListener("scroll", () => {
         if (window.scrollY > 1) {
@@ -750,9 +758,10 @@
         }
     })
 </script>
+<!--for nav_scrolled конец-->
 
+<!--for card resize-->
 <script>
-    //   <!--    for card    -->
     let elements = document.querySelectorAll(".card__description")
     elements.forEach(element => {
         element.addEventListener("click", () => {
@@ -763,9 +772,11 @@
         })
     })
 </script>
+<!--for card resize конец-->
 
+
+<!--Tabs-->
 <script>
-    // Tabs
     const tabsBtns = document.querySelectorAll(".tabs__btn")
     const tabsItems = document.querySelectorAll(".tabs__item")
 
@@ -791,14 +802,16 @@
     })
     document.querySelector(".tabs__btn").click()
 </script>
-<script>
-    const btns = document.querySelectorAll(".tabs__btn")
-    btns.forEach(item => {
-        item.addEventListener("click", () => {
-            alert(`Нажата кнопка ${item.innerHTML}`)
-        })
-    })
-</script>
+<!--Tabs конец-->
+
+<!--<script>-->
+<!--    const btns = document.querySelectorAll(".tabs__btn")-->
+<!--    btns.forEach(item => {-->
+<!--        item.addEventListener("click", () => {-->
+<!--            alert(`Нажата кнопка ${item.innerHTML}`)-->
+<!--        })-->
+<!--    })-->
+<!--</script>-->
 <script src="script.js" defer></script>
 <!--Для Аккордеона-->
 <script src="accordion.min.js"></script>
@@ -807,8 +820,8 @@
 </script>
 <!--Для Аккордеона конец-->
 
+<!--Modal-->
 <script defer>
-    // Modal
     let modal = document.getElementById('my-modal')
     let openModalBtn = document.getElementById("open-modal-btn")
     openModalBtn.addEventListener('click', () => {
@@ -834,10 +847,11 @@
         event.currentTarget.classList.remove('open')
 
     })
-
 </script>
+<!--Modal конец-->
+
+<!--Бургер менюю левое-->
 <script>
-    //Бургер менюю левое
     const hamburger = document.querySelector('.hamburger')
     const navMenu = document.querySelector('.nav-menu')
 
@@ -850,5 +864,6 @@
         navMenu.classList.remove('active')
     }))
 </script>
+<!--Бургер менюю левое конец-->
 </body>
 </html>
