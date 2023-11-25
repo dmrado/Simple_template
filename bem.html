@@ -35,16 +35,20 @@
 <body>
 <!--header-block-->
 <div class="body-wrapper">
-<!--    body-wrapper нужен для меню навигации справа в режиме телефона-->
+    <!--    body-wrapper нужен для меню навигации справа в режиме телефона-->
     <div class="header">
         <div class="header__container">
             <!--header__container -  nav-->
             <div class="nav">
-                <div class="logo">
+                <a href="http://binnopharmgroup.ru " class="logo">
                     <img class="logo__img" src="img/Binno.jpg" alt="logo"/>
-                </div>
+                </a>
+                <button class="header__burger-btn" id="burger">
+                    <span></span><span></span><span></span>
+                </button>
+
                 <!--            nav можно поменять на div -->
-                <nav class="menu">
+                <nav class="menu" id="menu">
                     <ul class="menu__list">
                         <li class="menu__item"><a class="menu__link" href="index.html">Тендер</a></li>
                         <li class="menu__item"><a class="menu__link" href="rozn.html">Розница</a></li>
@@ -759,6 +763,39 @@
     })
 </script>
 <!--for nav_scrolled конец-->
+
+<!--for burger menu-->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let header = document.querySelector('.header')
+        let burger = document.getElementById("burger")
+        let menu = document.getElementById('menu')
+
+        burger.addEventListener("click", () => {
+            header.classList.toggle('open')
+        })
+        //    закрыть по esc
+        window.addEventListener('keydown', e => {
+            if (e.key === "Escape") {
+                header.classList.remove('open')
+            }
+        })
+        //    закрыть при клике вне его
+        menu.addEventListener('click', e => {
+            console.log(e)
+            e._isClickWithInMenu = true
+        })
+        burger.addEventListener('click', e => {
+            console.log(e)
+            e._isClickWithInMenu = true
+        })
+        document.body.addEventListener('click', e => {
+            if(e._isClickWithInMenu) return
+            header.classList.remove('open')
+        })
+    })
+</script>
+<!--for burger menu конец-->
 
 <!--for card resize-->
 <script>
