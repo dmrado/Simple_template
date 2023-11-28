@@ -34,40 +34,30 @@
 </head>
 <body>
 <!--header-block-->
-<div class="body-wrapper">
-    <!--    body-wrapper нужен для меню навигации справа в режиме телефона-->
+
+<div class="container">
     <div class="header">
-        <div class="header__container">
-            <!--header__container -  nav-->
-            <div class="nav">
-                <a href="http://binnopharmgroup.ru " class="logo">
-                    <img class="logo__img" src="img/Binno.jpg" alt="logo"/>
-                </a>
-                <button class="header__burger-btn" id="burger">
-                    <span></span><span></span><span></span>
-                </button>
-
-                <!--            nav можно поменять на div -->
-                <nav class="menu" id="menu">
-                    <ul class="menu__list">
-                        <li class="menu__item"><a class="menu__link" href="index.html">Тендер</a></li>
-                        <li class="menu__item"><a class="menu__link" href="rozn.html">Розница</a></li>
-                        <li class="menu__item"><a class="menu__link" href="bem.html">БЭМ</a></li>
-                        <li class="menu__item"><a class="menu__link" href="mod.html">Модификаторы</a></li>
-                        <li class="menu__item"><a class="menu__link" href="slider.html">Слайдер</a></li>
-                    </ul>
-                </nav>
-
+        <div class="nav">
+            <div class="nav__logo">
+                <img class="header__logo" src="img/Binno.jpg" alt="logo"/>
             </div>
 
-            <div class="header__banner">
-                <img class="header__img" src="" alt=""/>
-                <h1 class="header__greeting">Hi bro !</h1>
-            </div>
+            <ul class="nav__links">
+                <li><a class="nav__link" href="index.html">Тендер</a></li>
+                <li><a class="nav__link" href="rozn.html">Розница</a></li>
+                <li><a class="nav__link" href="bem.html">БЭМ</a></li>
+                <li><a class="nav__link" href="mod.html">Модификаторы</a></li>
+                <li><a class="nav__link" href="slider.html">Слайдер</a></li>
+                <li><a class="nav__link" href="navsubmenu.html">navsubmenu</a></li>
+            </ul>
+        </div>
+
+        <div class="header__banner">
+            <img class="header__img" src="" alt=""/>
+            <h1 class="header__greeting">Hi bro !</h1>
         </div>
     </div>
 </div>
-
 
 <div class="container">
     <div class="about__list">
@@ -658,27 +648,24 @@
         <h1>Modal</h1>
         <button class="modal__close-btn" id="open-modal-btn">Open modal</button>
         <div class="modal" id="my-modal">
-            <div class="modal__box">
-                <div class="modal__close-btn">
-                    <svg
-                            id="close-my-modal-btn"
-                            class="close-my-modal-btn"
-                            width="50"
-                            height="50"
-                            viewBox="0 0 50 50"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <ellipse cx="25" cy="25" rx="25" ry="25" fill="#CACACA"/>
-                        <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z"
-                                fill="black"
-                        />
-                    </svg>
-                </div>
-
+            <div class="modal__box">                  
+                  <svg
+                  id="close-my-modal-btn"
+                  class="close-my-modal-btn"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+          >
+              <ellipse cx="25" cy="25" rx="25" ry="25" fill="#CACACA"/>
+              <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z"
+                      fill="black"
+              />
+          </svg>
                 <h2>My modal</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda facilis quia ratione
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi corporis deleniti
@@ -688,41 +675,11 @@
                     exercitationem fugit in incidunt iure minima obcaecati omnis pariatur possimus praesentium quibusdam
                 </p>
             </div>
+
         </div>
+
     </div>
 
-    <!--Контаты-->
-    <section class="contacts">
-        <div class="form">
-            <h2 class="heading">Напишите нам</h2>
-            <input type="text" required placeholder="введите ваше имя"/>
-            <input type="email" required placeholder="email"/>
-            <textarea cols="30" rows="10" required placeholder="ваше сообщение здесь"></textarea>
-            <input type="submit" value="Submit"/>
-        </div>
-        <div class="contact">
-            <div class="address">
-                <h3>Локация</h3>
-                <p>Vladivostok</p>
-                <p>Ussuriyskaya 1</p>
-                <p>Level 3</p>
-            </div>
-            <div class="phone">
-                <h3>Позвоните нам</h3>
-                <p>+7 999 9989809</p>
-                <p>+7 999 9989803</p>
-            </div>
-            <div class="hours">
-                <h3>Время работы</h3>
-                <p>10 - 18 ежедневно</p>
-            </div>
-        </div>
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.040722656651!2d131.93982005779804!3d43.12675736705109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fb39cba5249d485%3A0x186704d4dd967e35!2z0JLQu9Cw0LTQuNCy0L7RgdGC0L7Quiwg0J_RgNC40LzQvtGA0YHQutC40Lkg0LrRgNCw0Lk!5e0!3m2!1sru!2sru!4v1700850666232!5m2!1sru!2sru"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
     <!-- <textarea class="keylogger" placeholder="Введите текст"></textarea>
   <div>
     <p id="text"></p>
@@ -753,9 +710,8 @@
     </div>
 </div>
 
-
-<!--for nav_scrolled-->
 <script>
+    //   <!--    for nav_scrolled    -->
     let elementNav = document.querySelector(".nav")
     window.addEventListener("scroll", () => {
         if (window.scrollY > 1) {
@@ -765,41 +721,9 @@
         }
     })
 </script>
-<!--for nav_scrolled конец-->
 
-<!--for burger menu-->
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        let header = document.querySelector('.header')
-        let burger = document.getElementById("burger")
-        let menu = document.getElementById('menu')
-
-        burger.addEventListener("click", () => {
-            header.classList.toggle('open')
-        })
-        //    закрыть по esc
-        window.addEventListener('keydown', e => {
-            if (e.key === "Escape") {
-                header.classList.remove('open')
-            }
-        })
-        //    закрыть при клике вне его
-        menu.addEventListener('click', e => {
-            e._isClickWithInMenu = true
-        })
-        burger.addEventListener('click', e => {
-            e._isClickWithInMenu = true
-        })
-        document.body.addEventListener('click', e => {
-            if (e._isClickWithInMenu) return
-            header.classList.remove('open')
-        })
-    })
-</script>
-<!--for burger menu конец-->
-
-<!--for card resize-->
-<script>
+    //   <!--    for card    -->
     let elements = document.querySelectorAll(".card__description")
     elements.forEach(element => {
         element.addEventListener("click", () => {
@@ -810,11 +734,9 @@
         })
     })
 </script>
-<!--for card resize конец-->
 
-
-<!--Tabs-->
 <script>
+    // Tabs
     const tabsBtns = document.querySelectorAll(".tabs__btn")
     const tabsItems = document.querySelectorAll(".tabs__item")
 
@@ -840,16 +762,14 @@
     })
     document.querySelector(".tabs__btn").click()
 </script>
-<!--Tabs конец-->
-
-<!--<script>-->
-<!--    const btns = document.querySelectorAll(".tabs__btn")-->
-<!--    btns.forEach(item => {-->
-<!--        item.addEventListener("click", () => {-->
-<!--            alert(`Нажата кнопка ${item.innerHTML}`)-->
-<!--        })-->
-<!--    })-->
-<!--</script>-->
+<script>
+    const btns = document.querySelectorAll(".tabs__btn")
+    btns.forEach(item => {
+        item.addEventListener("click", () => {
+            alert(`Нажата кнопка ${item.innerHTML}`)
+        })
+    })
+</script>
 <script src="script.js" defer></script>
 <!--Для Аккордеона-->
 <script src="accordion.min.js"></script>
@@ -858,8 +778,8 @@
 </script>
 <!--Для Аккордеона конец-->
 
-<!--Modal-->
 <script defer>
+    // Modal
     let modal = document.getElementById('my-modal')
     let openModalBtn = document.getElementById("open-modal-btn")
     openModalBtn.addEventListener('click', () => {
@@ -869,26 +789,26 @@
     closeModalBtn.addEventListener('click', () => {
         modal.classList.remove('open')
     })
-    //    закрыть по esc
+//    закрыть по esc
     window.addEventListener('keydown', (e) => {
-        if (e.key === "Escape") {
+        console.log(e)
+        if(e.key === "Escape"){
             modal.classList.remove('open')
         }
     })
-    //    закрыть при клике вне его
+//    закрыть при клике вне его
     document.querySelector('#my-modal .modal__box').addEventListener('click', event => {
         event._isClickWithInModal = true
     })
     document.getElementById('my-modal').addEventListener('click', event => {
-        if (event._isClickWithInModal) return
+        if(event._isClickWithInModal) return
         event.currentTarget.classList.remove('open')
 
     })
-</script>
-<!--Modal конец-->
 
-<!--Бургер менюю левое-->
+</script>
 <script>
+    //Бургер менюю левое
     const hamburger = document.querySelector('.hamburger')
     const navMenu = document.querySelector('.nav-menu')
 
@@ -901,6 +821,5 @@
         navMenu.classList.remove('active')
     }))
 </script>
-<!--Бургер менюю левое конец-->
 </body>
 </html>

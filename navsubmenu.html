@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link
+         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i"
+         rel="stylesheet"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+      <!--    fa and bi libraries-->
+      <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+         rel="stylesheet"
+      />
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+         rel="stylesheet"
+      />
+
+      <!-- Libraries Stylesheet -->
+      <!--    <link href="lib/animate/animate.min.css" rel="stylesheet"/>-->
+      <!--    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"/>-->
+      <!--    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>-->
+
+      <link rel="stylesheet" href="css/navsubmenu.css" />
+      <!-- accordion.min.css подключать после всех стилей   -->
+      <link rel="stylesheet" href="css/accordion.min.css" />
+
+      <title>DPP | Card</title>
+   </head>
+   <body>
+      <!--header-block-->
+
+      <div class="container">
+         <div class="header">
+            <div class="nav">
+               <!-- <div class="nav__logo">
+            <img class="header__logo" src="img/Binno.jpg" alt="logo" />
+          </div> -->
+
+               <ul class="menu">
+                  <li> <a href="">item 1</a>
+                     <ul>
+                        <li><a href="">subitem 2</a></li>
+                        <li><a href="">subitem 3</a></li>
+                        <li><a href="">subitem 4</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="">item 2</a>
+                     <ul>
+                        <li><a href="">subitem 6</a></li>
+                        <li><a href="">subitem 5</a>
+                           <ul>
+                              <li><a href="">subitem 8</a></li>
+                              <li><a href="">subitem 9</a></li>
+                              <li><a href="">subitem 10</a></li>
+                           </ul>
+                        </li>
+
+                      
+                        <li><a href="">subitem 7</a></li>
+                     </ul>
+                  </li>
+
+                  <li><a href="">item 3</a></li>
+                  <li><a href="">item 4</a></li>
+                  <li><a href="">item 5</a></li>
+
+                  <li><a class="nav__link" href="bem.html">БЭМ</a></li>
+                  <li><a class="nav__link" href="navsubmenu.html">navsubmenu</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <script>
+         //   <!--    for nav_scrolled    -->
+         let elementNav = document.querySelector(".nav")
+         window.addEventListener("scroll", () => {
+            if (window.scrollY > 1) {
+               elementNav.classList.add("nav_scrolled")
+            } else {
+               elementNav.classList.remove("nav_scrolled")
+            }
+         })
+      </script>
+   </body>
+</html>
