@@ -1,5 +1,5 @@
 /*принятые вводные для всего проекта*/
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,9 +17,10 @@ body{
 .img-slider{
     position: relative;
     width: 800px;
-    height: 500px;
+    height: 480px;
     margin: 10px;
     background: #ffffff;
+    border-radius: 5%;
 }
 
 .img-slider .slide{
@@ -27,11 +28,12 @@ body{
     position: absolute;
     width: 100%;
     clip-path: circle(0% at 0 50%);
+    border-radius: 5px;
 }
 
 .img-slider .slide.active{
     clip-path: circle(150% at 0 50%);
-    transition: 2s;
+    transition: 6s;
     transition-property: clip-paht;
 }
 
@@ -72,12 +74,13 @@ body{
     left: 50%;
     transform: translateX(-50%);
 }
+
 .img-slider .navigation .btn{
     background: rgba(5, 180, 180, 0.968);
-    width: 12px;
-    height: 12px;
+    width: 28px;
+    height: 14px;
     margin: 10px;
-    border-radius: 50%;
+    border-radius: 12%;
     cursor: pointer;
 }
 
