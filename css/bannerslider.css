@@ -26,14 +26,13 @@ body{
     z-index: 1;
     position: absolute;
     width: 100%;
-    /*clip-path: circle(0% at 0 50%);*/
+    clip-path: circle(0% at 0 50%);
 }
 
 .img-slider .slide.active{
-    /*clip-path: circle(150% at 0 50%);*/
-    /*transition: 2s;*/
-    /*transition-property: clip-paht;*/
-    background: #41fd16;
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+    transition-property: clip-paht;
 }
 
 .img-slider .slide img{
