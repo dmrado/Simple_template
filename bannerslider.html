@@ -3,27 +3,11 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
       <link
-         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i"
-         rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i"
+              rel="stylesheet"
       />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-      <!--    fa and bi libraries-->
-      <link
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-         rel="stylesheet"
-      />
-      <link
-         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-         rel="stylesheet"
-      />
-
       <link rel="stylesheet" href="css/bannerslider.css" />
-      <!-- <link rel="stylesheet" href="css/accordion.min.css"/> -->
-
       <title>DPP | bannerslider</title>
    </head>
    <body>
@@ -80,7 +64,7 @@
       </div>
 
       <!-- bannerslider start-->
-      <script type="text/javascript">
+      <script type="text/javascript" defers>
          const slides = document.querySelectorAll(".slide")
          const btns = document.querySelectorAll(".btn")
          let currentSlide = 1
@@ -103,25 +87,31 @@
             })
          })
         //  Autoplay
-        const repeat = function(activeClass){
+        const repeat = function(){
             let active = document.getElementsByClassName('active')
             let i = 1
-
             const repeater = () => {
                 setTimeout(function(){
+                   [...active].forEach(activeSlide => {
+                      activeSlide.classList.remove('active')
+                      console.log(active)
+                   })
+
                     slides[i].classList.add('active')
                     btns[i].classList.add('active')
                     i++
                     if(slides.length == i){
                         i = 0
                     }
-                    if(i>= slides.length){
+                    if(i >= slides.length){
                         return
                     }
                     repeater()
-                })
+                }, 10000)
             }
+           repeater()
         }
+         repeat()
       </script>
       <!-- bannerslider finish-->
    </body>

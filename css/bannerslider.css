@@ -1,3 +1,11 @@
+/*принятые вводные для всего проекта*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open", sans-serif;
+}
+
 body{
     height: 100vh;
     display: flex;
@@ -18,25 +26,23 @@ body{
     z-index: 1;
     position: absolute;
     width: 100%;
-    clip-path:circle(0% at 0 50%)
+    /*clip-path: circle(0% at 0 50%);*/
 }
 
 .img-slider .slide.active{
-    clip-path:circle(150% at 0 50%);
-    transition: 2s;
-    transition-property: clip-paht;
+    /*clip-path: circle(150% at 0 50%);*/
+    /*transition: 2s;*/
+    /*transition-property: clip-paht;*/
+    background: #41fd16;
 }
 
 .img-slider .slide img{
     z-index: 1;
     width: 100%;
     border-radius: 5px;
-    
-    /* background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
 }
-.img-slider .slide info{
+
+.img-slider .slide .info{
     position: absolute;
     top: 0;
     padding: 15px 30px;
@@ -132,7 +138,6 @@ body{
     }
 }
 
-
 @media (max-width: 420px) {
     .img-slider{
         width: 320px;
@@ -150,10 +155,5 @@ body{
     }
     .img-slider .navigation{
         bottom: 10px;
-    }
-    .img-slider .navigation .btn{
-        width: 10px;
-        height: 10px;
-        margin: 8px;
     }
 }
