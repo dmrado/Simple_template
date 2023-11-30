@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .main-text {
@@ -38,7 +39,7 @@
     left: -5%;
     bottom: 0;
     border-radius: 999px;
-    background-color: #30ffd6;
+    background-color: rgb(124, 157, 255);
     z-index: -1;
 }
 
@@ -122,10 +123,83 @@
     z-index: -2;
 }
 
+.rectangle{
+    background-color: rgb(255, 227, 192);
+    height: 590px;
+    width: 65%;
+    position: absolute;
+    right: -20px;
+    border-radius: 33% 67% 36% 64% / 72% 40% 60% 28%;
+    opacity: 0,1;
+    z-index: -5;
+}
+
 .main-background-rectangle {
-    opacity: 0.4;
+    /* opacity: 0.4; */
 }
 
 .main-background-dots {
     top: 18px;
+}
+
+@media (max-width: 990px) {
+    .rectangle{
+        height: 400px;
+        width: 55%;
+        right: -30px;
+    }
+    .main-text-title{
+        font-size: 42px;
+    }
+    .main-text-subtitle{
+        font-size: 24px;
+    }
+    .main-grid-text1{
+        font-size: 14px;
+    }
+    .main-grid-text2{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 726px) {
+    .rectangle{
+        height: 300px;
+        width: 50%;
+        right: -60px;
+    }
+    .main-text-title{
+        font-size: 28px;
+    }
+    .main-text-subtitle{
+        font-size: 16px;
+    }
+    .main-grid-text1{
+        font-size: 10px;
+    }
+    .main-grid-text2{
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 468px) {
+    .rectangle{
+        height: 200px;
+        width: 45%;
+        right: -50px;
+    }
+    .main-text-title{
+        font-size: 20px;
+    }
+    .main-text-subtitle{
+        font-size: 12px;
+    }
+    .main-grid-text1{
+        font-size: 8px;
+    }
+    .main-grid-text2{
+        font-size: 6px;
+    }
+}
+
 }
