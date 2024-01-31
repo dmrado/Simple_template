@@ -680,24 +680,60 @@
 
         </div>
 
+
+        <!--form-->
+        <form class="form" action="">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+
+            <label for="text">Text:</label>
+            <textarea id="text" name="text" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
     </div>
 
-    <!-- <textarea class="keylogger" placeholder="Введите текст"></textarea>
-  <div>
-    <p id="text"></p>
-  </div>
-  <script text="javascript">
-    let arrayE = []
-    let letter
-    let outText = document.getElementById("text")
-    document.addEventListener("keyup", e => {
-      letter = e.key
-      arrayE.push(letter)
-      console.log("outText", outText)
-      outText.innerHTML = `Output: ${arrayE}`
-      let a = `Output: ${arrayE}`
-    })
-  </script> -->
+<!--    <textarea class="keylogger" placeholder="Введите текст"></textarea>-->
+<!--  <div>-->
+<!--    <p id="text"></p>-->
+<!--  </div>-->
+<!--  <script text="javascript">-->
+<!--    let arrayE = []-->
+<!--    let letter-->
+<!--    let outText = document.getElementById("text")-->
+<!--    document.addEventListener("keyup", e => {-->
+<!--      letter = e.key-->
+<!--      arrayE.push(letter)-->
+<!--      console.log("outText", outText)-->
+<!--      outText.innerHTML = `Output: ${arrayE}`-->
+<!--      let a = `Output: ${arrayE}`-->
+<!--    })-->
+<!--  </script>-->
+
+
+<!--keylogger-->
+<!--<body>-->
+<!--<div id="text">Output:</div>-->
+
+<!--<script>-->
+<!--    let arrayE = [];-->
+<!--    let outText = document.getElementById("text");-->
+
+<!--    document.addEventListener("keyup", e => {-->
+<!--        arrayE.push(e.key);-->
+<!--        outText.innerHTML = Output: ${arrayE.join('')};-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--keylogger-->
 
     <!--Footer-->
     <div class="container">
@@ -807,8 +843,8 @@
         event.currentTarget.classList.remove('open')
 
     })
-
 </script>
+
 <script>
     //Бургер менюю левое
     const hamburger = document.querySelector('.hamburger')
