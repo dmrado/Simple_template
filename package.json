@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@faker-js/faker": "^8.4.0",
     "express-async-handler": "^1.2.0",
     "faker": "^6.6.6",
     "mysql2": "^3.6.3",
