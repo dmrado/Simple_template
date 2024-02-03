@@ -9,6 +9,8 @@ function generateName() {
     return names[getRandomInt(0, names.length - 1)];
 }
 
+// const arrayOfOne = new Array(100)
+
 // Генерация массива людей
 function generatePeople(count) {
     const people = [];
