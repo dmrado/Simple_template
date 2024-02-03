@@ -33,31 +33,17 @@
 const people = [{name: 'Anna', age: 19}, {name: 'Boris', age: 10}, {name: 'Inna', age: 39}, {name: 'Natasha', age: 11}, {name: 'Tat', age: 29}, {name: 'Bob', age: 65}]
 
 
-const young = people.reduce((acc, currentValue) => {
-    // console.log('currentValue', currentValue)
-    if (currentValue?.age < 20){
-        acc.push(currentValue)
+const categorizedPeoples = people.reduce((accum, currentValue) => {
+    if (currentValue?.age < 20) {
+        accum['young'].push(currentValue)
+    } else if (currentValue?.age >= 20 && currentValue?.age < 65) {
+        accum['workingAge'].push(currentValue)
+    } else if (currentValue?.age >= 65) {
+        accum['senior'].push(currentValue)
     }
-    // console.log('acc', acc)
-    return acc
-}, [])
-// В этом примере, для каждого элемента массива (currentValue), мы проверяем, меньше ли он 20. Если да, то добавляем его в аккумулятор (accumulator) с помощью метода push. Если нет, просто переходим к следующему элементу.
-// Инициализация accumulator как пустого массива [] позволяет нам собрать в нём все подходящие значения. В конце выполнения reduce, accumulator будет содержать все значения из исходного массива, которые меньше 20.
-console.log('young', young)
+    return accum
+}, {young: [], workingAge: [], senior: []})
 
+// эта часть кода задаёт структуру данных, которая будет заполняться в процессе работы reduce, обеспечивая удобную категоризацию людей по возрастным группам.
 
-const workingAge = people.reduce((acc, currentValue) => {
-    if(currentValue?.age > 20 && currentValue?.age < 65){
-        acc.push(currentValue)
-    }
-    return acc
-}, [])
-console.log('workingAge', workingAge)
-
-const senior = people.reduce((acc, currentValue) => {
-    if(currentValue?.age >= 65){
-        acc.push(currentValue)
-    }
-    return acc
-}, [])
-console.log('senior', senior)
+console.log(categorizedPeoples);
