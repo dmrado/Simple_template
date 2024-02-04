@@ -6,21 +6,31 @@
 
 const {faker} = require('@faker-js/faker')
 const now = new Date()
-console.log('now.getFullYear()', now.getFullYear())
+//встроенный класс для приведения даты из calculateAge() к дате в объекте now
+const RUDate = new Intl.DateTimeFormat()
+console.log('now', now.getFullYear())
 
 // генерим рандомные годы рождения от 0 до 100
 function generateAge(count) {
-        return calculateAge(faker.date.birthdate({min: 0, max: 100}))
+    return calculateAge(RUDate.format(
+        faker.date.birthdate({min: 0, max: 100})))
 }
 
+//calculateAge требует аргумента поэтому он здесь
 function calculateAge(arg) {
     const birthDate = new Date(arg)
-    console.log('birthDate.getFullYear()', birthDate.getFullYear())
+    console.log('birthDate', birthDate.getFullYear())
     console.log('arg for calculateAge', arg)
 
-    let age = now.getFullYear() - birthDate.getFullYear();
-    // console.log('now.getFullYear() - birthDate.getFullYear()', now.getFullYear() - birthDate.getFullYear())
-    const monthDiff = now.getMonth() - birthDate.getMonth();
+    //вычисляем год по отношению к текущему
+    let age = now.getFullYear() - birthDate.getFullYear()
+    console.log('age', age)
+
+    //вычисляем месяц по отношению к текущему
+    const monthDiff = now.getMonth() - birthDate.getMonth()
+    console.log('monthDiff', monthDiff)
+    console.log('birthDate.getMonth()', birthDate.getMonth())
+    //вычитаем один год если месяц рождения еще не наступил (если разница отрицательная)
     if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < birthDate.getDate())) {
         age--
     }
@@ -28,7 +38,7 @@ function calculateAge(arg) {
 }
 
 // генерим полные имена
-function generateName(number = 1) {
+function generateName(number = 100) {
     return faker.person.fullName()
 }
 
@@ -44,21 +54,20 @@ function generatePeople(count) {
     return people
 }
 
-const people = generatePeople(1)
+const people = generatePeople(100)
 console.log('people', people)
 
-const getFullYear = now.getFullYear()
 
-    const categorizedPeoples = people.reduce((accum, currentValue) => {
-    if (getFullYear - currentValue?.age  < 20) {
+const categorizedPeoples = people.reduce((accum, currentValue) => {
+    if (currentValue?.age < 20) {
         accum['young'].push(currentValue)
-    } else if (getFullYear - currentValue?.age >= 20 && getFullYear - currentValue?.age < 65) {
+    } else if (currentValue?.age >= 20 && currentValue?.age < 65) {
         accum['workingAge'].push(currentValue)
-    } else if (getFullYear - currentValue?.age >= 65) {
+    } else if (currentValue?.age >= 65) {
         accum['senior'].push(currentValue)
     }
     return accum
-}, { young: [], workingAge: [], senior: [] })
+}, {young: [], workingAge: [], senior: []})
 
 // эта часть кода задаёт структуру данных, которая будет заполняться в процессе работы reduce, обеспечивая удобную категоризацию людей по возрастным группам.
 
