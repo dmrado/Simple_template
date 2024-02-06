@@ -6,21 +6,12 @@
 
 const {faker} = require('@faker-js/faker')
 const now = new Date()
-//встроенный класс для приведения даты из calculateAge() к дате в объекте now
-const RUDate = new Intl.DateTimeFormat()
 console.log('now', now)
 
 // генерим рандомные годы рождения от 0 до 100
 function generateAge(count) {
-    return calculateAge(
-        faker.date.birthdate({min: 0, max: 100, mode: "age"}))
-}
-
-//calculateAge требует аргумента поэтому он здесь
-function calculateAge(arg) {
-    const birthDate = new Date(arg)
+    const birthDate = faker.date.birthdate({min: 0, max: 100, mode: "age"})
     console.log('birthDate', birthDate)
-    console.log('calculateAge arg', arg)
 
     //вычисляем год по отношению к текущему
     let age = now.getFullYear() - birthDate.getFullYear()
@@ -55,7 +46,7 @@ function generatePeople(count) {
 }
 
 const people = generatePeople(1)
-console.log('people', people)
+// console.log('people', people)
 
 
 const categorizedPeoples = people.reduce((accum, currentValue) => {
