@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,//после return-а подсветит недостижимый код
+    "allowUnusedLabels": false,//подсветит лейблы неиспользуемых фрагментов кода
+    "alwaysStrict": true,//всегда компилирует в JS 'use strict'
+    "strictNullChecks": true,//проверяет если вместо ожидаемого значения приходит null или undefined
+    "exactOptionalPropertyTypes": true,//можно типизировать только определнными ранее типами
+    "noFallthroughCasesInSwitch": true,//не дает забыть про brake в switch
+    "noImplicitAny": true,//не будет неявных any
+    "noImplicitOverride": true,//против неявного переопределения свойств в классах при наследовании либо добавить override для частного случая перезаписи
+    "noImplicitReturns": true,//убеждается что возвращается какое-то значени, то есть запрещает undefined
+    "noPropertyAccessFromIndexSignature": false,//если true, то для [key: value]: string не сможем использовать точечную сигнатуру s
+    //    "noUncheckedIndexedAccess": false,//если true, то будет добавляться тип undefined каждому не декларируемому полю, кроме уже декларированных типов
+    "noUnusedLocals": true,//сообщает о наличии неиспользуемых переменных
+    "noUnusedParameters": true,//сообщает о наличии неиспользуемых параметров функций
+    "strictBindCallApply": true,// корректная проверка аргументов при вызове функции с call, bind или apply
+    "strictFunctionTypes": true,//если мы делаем функцию на основании другой функции с уже определеными типами аргументов, то типы аргументов новой функции будут проверены на соотсветствие типам первой функции
+    "strictPropertyInitialization": true,//выдает ошибку если мы продекларировали свойства, но не объявили в конструкторе класса
+    "useUnknownInCatchVariables": true,//ошибка в catch меняется с any на unknown
+
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,//включает все свойства, связанные со strict
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    //    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "allowImportingTsExtensions": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
