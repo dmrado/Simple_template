@@ -1,35 +1,83 @@
+Node.js также поддерживает ESM, начиная с версии 12, но требует указания типа модуля в package.json ("type": "module")
+
+рекомендации по настроке для различных фреймворков и библиотек
+https://github.com/tsconfig/bases/tree/main/bases
+
+tsc --init
+
 {
+  "extends": "@tsconfig/node12/tsconfig.json",//позволяет создавать несколько tsconfig-ов
+  "files": ["./src/index.ts"],//можем явно указать только те файлы, которые должны обрабатываться этим tsconfig.json, требует указания полного пути то есть здесб rootDir не работает
+  "include": ["src"],//выбирает для обработки целыми директориями в отличие от выбора для обработки файлов
+  "exclude": ["src/**/*.spec.ts"],//исключает из include все что мы хотим пример: в src везде все файлы которые содержат spec
+
   "compilerOptions": {
+
+    //Type Checking
+
     "allowUnreachableCode": false,//после return-а подсветит недостижимый код
     "allowUnusedLabels": false,//подсветит лейблы неиспользуемых фрагментов кода
     "alwaysStrict": true,//всегда компилирует в JS 'use strict'
+    "allowSyntheticDefaultImports": true,//например в библиотеке нет дефолтных импортов, и мы можем написать <import * as R from 'ramda'>
     "strictNullChecks": true,//проверяет если вместо ожидаемого значения приходит null или undefined
     "exactOptionalPropertyTypes": true,//можно типизировать только определнными ранее типами
     "noFallthroughCasesInSwitch": true,//не дает забыть про brake в switch
     "noImplicitAny": true,//не будет неявных any
     "noImplicitOverride": true,//против неявного переопределения свойств в классах при наследовании либо добавить override для частного случая перезаписи
     "noImplicitReturns": true,//убеждается что возвращается какое-то значени, то есть запрещает undefined
-    "noPropertyAccessFromIndexSignature": false,//если true, то для [key: value]: string не сможем использовать точечную сигнатуру s
-    //    "noUncheckedIndexedAccess": false,//если true, то будет добавляться тип undefined каждому не декларируемому полю, кроме уже декларированных типов
+    "noPropertyAccessFromIndexSignature": false,//если true, то запрещает обращаться через точку к необязательным элементам интерфейса, а только obj["value"], а для строковых динамических ключей <[key: string]: string> свойств используем obj["value"]
+    "noUncheckedIndexedAccess": false,//если true, то будет добавляться тип undefined каждому не декларируемому полю, кроме уже декларированных типов
     "noUnusedLocals": true,//сообщает о наличии неиспользуемых переменных
     "noUnusedParameters": true,//сообщает о наличии неиспользуемых параметров функций
     "strictBindCallApply": true,// корректная проверка аргументов при вызове функции с call, bind или apply
     "strictFunctionTypes": true,//если мы делаем функцию на основании другой функции с уже определеными типами аргументов, то типы аргументов новой функции будут проверены на соотсветствие типам первой функции
     "strictPropertyInitialization": true,//выдает ошибку если мы продекларировали свойства, но не объявили в конструкторе класса
     "useUnknownInCatchVariables": true,//ошибка в catch меняется с any на unknown
+    "target": "es5",//то есть код будет преобразован в es5
+    "allowJs": true,//разрешить использование файлов js в проекте и их преобразование в ts
+    "checkJs": true,//проверять их (из предыдущего свойства)
+
+
+
+    //Modules
+
+        "allowUmdGlobalAccess": true,//импортирует в проект UMD эеспорты как глобальные объектф или переменные
+        "baseUrl": "./", // разрешает неабсолютные пути как от папки src или public ./  - это по умолчанию типа import {} from 'components'
+        "module": CommonJS,(синхронная загрузка модулей) | RequireJS(AMD-асинхронная загрузка модулей) //синтаксис CommonJS-require/module.exports  RequireJS require(['moduleA', 'moduleB']
+        "moduleResolution": node| nodenext| classic, // стратегия использования модулей связана с module
+        "moduleSuffixes": ,//позволяет импортировать файлы без расширений import* as foo from "./foo
+        "noResolve": false,//по умолчанию TS проверяет коороче не надо ставить в false пусть проверяет
+        "paths": {"@/*": ["./src/*"]},//быстрые доступы
+        "resolveJsonModule": true,//позволяет импорт json файлов типа import file from './file.json'
+        "rootDir": "",  //указать root-директорию в которой все лежит, если не определена, то определяет самый длинный путь проекта как "rootDir": ""
+        "outDir": "./build",//указать куда складывать файлы JS после преобразовария из TS, создаст сам
+        "rootDirs": "",//можно прописать много виртуальных директорий, работающих как одна
+        "typeRoots": [],//позволяет типы модулей, которые нужно импортировать
+        "types": ["node", "jest", "express"],// собственно какие пакеты мы хотим включить в компиляцию
+        "sourceMap": true,// нужен, если мы работаем с файлами '.map'
+
+        "noEmit": true, //сборка не tsx, а через webpack или babel, для проектов на react и next
+
+        "strict": true,//включение всего в строгом режиме все strict* свойства тогда встанут в true, но можно их внутри отдельно исключить по одному
+        "strictNullChecks": false, //все же сможем передать функцию со значеним null
+
+
+
+
 
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true,//если две библиотеки имеют одинаковые параметры, что б не перекрывалось
     "strict": true,//включает все свойства, связанные со strict
     "noEmit": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true,//для библиотек, которые не имеют импортов мы их можем импортировать через импорты
     "module": "esnext",
     "moduleResolution": "bundler",
     //    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "preserve",//будет проверять файлы это для случаев, когда мы рабоатем с react jsx
+    "declaration": true,//работает с файлами настроек библиотек '.d.ts'
     "incremental": true,
     "allowImportingTsExtensions": true,
     "plugins": [
