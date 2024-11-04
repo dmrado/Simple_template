@@ -6,22 +6,22 @@ export const NavbarWithSubmenu = () => {
     const secondLevelFirst = [
         {
             id: 11,
-            name: 'item_11',
+            name: 'Производитель 1',
             href: '#'
         },
         {
             id: 12,
-            name: 'item_12',
+            name: 'Производитель 2',
             href: '#'
         },
         {
             id: 13,
-            name: 'item_13',
+            name: 'Производитель 3',
             href: '#'
         },
         {
             id: 14,
-            name: 'item_14',
+            name: 'Производитель 4',
             href: '#'
         },
     ]
@@ -29,23 +29,31 @@ export const NavbarWithSubmenu = () => {
     const firstLevel = [
         {
             id: 1,
-            name: 'item_1',
+            name: 'Главная',
             href: '#'
         },
         {
             id: 2,
-            name: 'item_2',
+            name: 'каталог',
             href: '#',
             submenu: secondLevelFirst // добавляем подменю ко второму элементу
         },
         {
             id: 3,
-            name: 'item_3',
+            name: 'производители',
             href: '#'
         },
-        // ... остальные элементы
+        {
+            id: 4,
+            name: 'доставка и оплата',
+            href: '#'
+        },
+        {
+            id: 5,
+            name: 'контакты',
+            href: '#'
+        },
     ]
-
 
 
     const handleSubmenuClick = (id) => {
