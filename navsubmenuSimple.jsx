@@ -8,7 +8,7 @@ export const NavbarWithSubmenu = () => {
             name: 'item_1',
             href: '#'
         },
-          {
+        {
             id: 2,
             name: 'item_2',
             href: '#'
@@ -41,7 +41,7 @@ export const NavbarWithSubmenu = () => {
             name: 'item_11',
             href: '#'
         },
-          {
+        {
             id: 12,
             name: 'item_12',
             href: '#'
@@ -98,3 +98,4 @@ export const NavbarWithSubmenu = () => {
             </div>
         )
     }
+}
